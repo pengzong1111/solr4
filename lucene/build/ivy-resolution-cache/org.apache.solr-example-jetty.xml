@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.apache.solr"
+		module="example"
+		revision="working@Zong-PC"
+		conf="jetty"
+		confs="jetty"
+		date="20150511184733"/>
+	<dependencies>
+		<module organisation="org.eclipse.jetty" name="jetty-deploy">
+			<revision name="8.1.10.v20130312" status="release" pubdate="20130312114802" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="1">
+				<metadata-artifact status="no" details="" size="9066" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-deploy\ivy-8.1.10.v20130312.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-deploy/8.1.10.v20130312/jetty-deploy-8.1.10.v20130312.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="jetty" rev="8.1.10.v20130312" rev-constraint-default="8.1.10.v20130312" rev-constraint-dynamic="8.1.10.v20130312" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jetty-deploy" type="jar" ext="jar" status="no" details="" size="60756" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-deploy\jars\jetty-deploy-8.1.10.v20130312.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-deploy/8.1.10.v20130312/jetty-deploy-8.1.10.v20130312.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.jetty" name="jetty-webapp">
+			<revision name="8.1.10.v20130312" status="release" pubdate="20130312114220" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="9">
+				<metadata-artifact status="no" details="" size="8913" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-webapp\ivy-8.1.10.v20130312.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-webapp/8.1.10.v20130312/jetty-webapp-8.1.10.v20130312.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="jetty" rev="8.1.10.v20130312" rev-constraint-default="8.1.10.v20130312" rev-constraint-dynamic="8.1.10.v20130312" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jetty-webapp" type="jar" ext="jar" status="no" details="" size="110227" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-webapp\jars\jetty-webapp-8.1.10.v20130312.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-webapp/8.1.10.v20130312/jetty-webapp-8.1.10.v20130312.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.jetty" name="jetty-servlet">
+			<revision name="8.1.10.v20130312" status="release" pubdate="20130312113555" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="7">
+				<metadata-artifact status="no" details="" size="8742" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-servlet\ivy-8.1.10.v20130312.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-servlet/8.1.10.v20130312/jetty-servlet-8.1.10.v20130312.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="jetty" rev="8.1.10.v20130312" rev-constraint-default="8.1.10.v20130312" rev-constraint-dynamic="8.1.10.v20130312" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jetty-servlet" type="jar" ext="jar" status="no" details="" size="101052" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-servlet\jars\jetty-servlet-8.1.10.v20130312.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-servlet/8.1.10.v20130312/jetty-servlet-8.1.10.v20130312.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.jetty" name="jetty-security">
+			<revision name="8.1.10.v20130312" status="release" pubdate="20130312113455" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="5">
+				<metadata-artifact status="no" details="" size="8639" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-security\ivy-8.1.10.v20130312.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-security/8.1.10.v20130312/jetty-security-8.1.10.v20130312.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="jetty" rev="8.1.10.v20130312" rev-constraint-default="8.1.10.v20130312" rev-constraint-dynamic="8.1.10.v20130312" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jetty-security" type="jar" ext="jar" status="no" details="" size="89691" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-security\jars\jetty-security-8.1.10.v20130312.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-security/8.1.10.v20130312/jetty-security-8.1.10.v20130312.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.jetty" name="jetty-server">
+			<revision name="8.1.10.v20130312" status="release" pubdate="20130312113217" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="6">
+				<metadata-artifact status="no" details="" size="9233" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-server\ivy-8.1.10.v20130312.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-server/8.1.10.v20130312/jetty-server-8.1.10.v20130312.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="jetty" rev="8.1.10.v20130312" rev-constraint-default="8.1.10.v20130312" rev-constraint-dynamic="8.1.10.v20130312" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jetty-server" type="jar" ext="jar" status="no" details="" size="347020" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-server\jars\jetty-server-8.1.10.v20130312.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-server/8.1.10.v20130312/jetty-server-8.1.10.v20130312.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.jetty" name="jetty-jmx">
+			<revision name="8.1.10.v20130312" status="release" pubdate="20130312112720" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="4">
+				<metadata-artifact status="no" details="" size="8617" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-jmx\ivy-8.1.10.v20130312.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-jmx/8.1.10.v20130312/jetty-jmx-8.1.10.v20130312.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="jetty" rev="8.1.10.v20130312" rev-constraint-default="8.1.10.v20130312" rev-constraint-dynamic="8.1.10.v20130312" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jetty-jmx" type="jar" ext="jar" status="no" details="" size="24595" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-jmx\jars\jetty-jmx-8.1.10.v20130312.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-jmx/8.1.10.v20130312/jetty-jmx-8.1.10.v20130312.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.jetty" name="jetty-http">
+			<revision name="8.1.10.v20130312" status="release" pubdate="20130312112814" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="2">
+				<metadata-artifact status="no" details="" size="8680" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-http\ivy-8.1.10.v20130312.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-http/8.1.10.v20130312/jetty-http-8.1.10.v20130312.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="jetty" rev="8.1.10.v20130312" rev-constraint-default="8.1.10.v20130312" rev-constraint-dynamic="8.1.10.v20130312" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jetty-http" type="jar" ext="jar" status="no" details="" size="95709" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-http\jars\jetty-http-8.1.10.v20130312.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-http/8.1.10.v20130312/jetty-http-8.1.10.v20130312.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.jetty" name="jetty-io">
+			<revision name="8.1.10.v20130312" status="release" pubdate="20130312112755" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="3">
+				<metadata-artifact status="no" details="" size="8538" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-io\ivy-8.1.10.v20130312.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-io/8.1.10.v20130312/jetty-io-8.1.10.v20130312.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="jetty" rev="8.1.10.v20130312" rev-constraint-default="8.1.10.v20130312" rev-constraint-dynamic="8.1.10.v20130312" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jetty-io" type="jar" ext="jar" status="no" details="" size="103622" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-io\jars\jetty-io-8.1.10.v20130312.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-io/8.1.10.v20130312/jetty-io-8.1.10.v20130312.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.jetty" name="jetty-xml">
+			<revision name="8.1.10.v20130312" status="release" pubdate="20130312114135" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="10">
+				<metadata-artifact status="no" details="" size="8553" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-xml\ivy-8.1.10.v20130312.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-xml/8.1.10.v20130312/jetty-xml-8.1.10.v20130312.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="jetty" rev="8.1.10.v20130312" rev-constraint-default="8.1.10.v20130312" rev-constraint-dynamic="8.1.10.v20130312" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jetty-xml" type="jar" ext="jar" status="no" details="" size="38983" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-xml\jars\jetty-xml-8.1.10.v20130312.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-xml/8.1.10.v20130312/jetty-xml-8.1.10.v20130312.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.jetty" name="jetty-util">
+			<revision name="8.1.10.v20130312" status="release" pubdate="20130312112653" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="8">
+				<metadata-artifact status="no" details="" size="8910" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-util\ivy-8.1.10.v20130312.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util/8.1.10.v20130312/jetty-util-8.1.10.v20130312.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="jetty" rev="8.1.10.v20130312" rev-constraint-default="8.1.10.v20130312" rev-constraint-dynamic="8.1.10.v20130312" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jetty-util" type="jar" ext="jar" status="no" details="" size="284903" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-util\jars\jetty-util-8.1.10.v20130312.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util/8.1.10.v20130312/jetty-util-8.1.10.v20130312.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.eclipse.jetty" name="jetty-continuation">
+			<revision name="8.1.10.v20130312" status="release" pubdate="20130312112836" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<metadata-artifact status="no" details="" size="8651" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-continuation\ivy-8.1.10.v20130312.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-continuation/8.1.10.v20130312/jetty-continuation-8.1.10.v20130312.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="jetty" rev="8.1.10.v20130312" rev-constraint-default="8.1.10.v20130312" rev-constraint-dynamic="8.1.10.v20130312" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jetty-continuation" type="jar" ext="jar" status="no" details="" size="21144" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-continuation\jars\jetty-continuation-8.1.10.v20130312.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-continuation/8.1.10.v20130312/jetty-continuation-8.1.10.v20130312.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.apache.lucene"
+		module="analyzers-icu"
+		revision="working@Zong-PC"
+		conf="default"
+		confs="default"
+		date="20150511184017"/>
+	<dependencies>
+		<module organisation="com.ibm.icu" name="icu4j">
+			<revision name="52.1" status="release" pubdate="20131007144542" resolver="public" artresolver="main" homepage="http://icu-project.org/" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="0">
+				<license name="ICU License" url="http://source.icu-project.org/repos/icu/icu/trunk/license.html"/>
+				<metadata-artifact status="no" details="" size="2672" time="0" location="C:\Users\Zong\.ivy2\cache\com.ibm.icu\icu4j\ivy-52.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/ibm/icu/icu4j/52.1/icu4j-52.1.pom"/>
+				<caller organisation="org.apache.lucene" name="analyzers-icu" conf="default" rev="52.1" rev-constraint-default="52.1" rev-constraint-dynamic="52.1" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="icu4j" type="jar" ext="jar" status="no" details="" size="10466977" time="0" location="C:\Users\Zong\.ivy2\cache\com.ibm.icu\icu4j\jars\icu4j-52.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/ibm/icu/icu4j/52.1/icu4j-52.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

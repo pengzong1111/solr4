@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.apache.lucene"
+		module="replicator"
+		revision="working@Zong-PC"
+		conf="http"
+		confs="http, jetty, start, servlet, logging"
+		date="20150511184025"/>
+	<dependencies>
+		<module organisation="org.apache.httpcomponents" name="httpclient">
+			<revision name="4.3.1" status="release" pubdate="20131003154302" resolver="public" artresolver="main" homepage="http://hc.apache.org/httpcomponents-client" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<metadata-artifact status="no" details="" size="10735" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.httpcomponents\httpclient\ivy-4.3.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.pom"/>
+				<caller organisation="org.apache.lucene" name="replicator" conf="http" rev="4.3.1" rev-constraint-default="4.3.1" rev-constraint-dynamic="4.3.1" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="httpclient" type="jar" ext="jar" status="no" details="" size="585602" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.httpcomponents\httpclient\jars\httpclient-4.3.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.httpcomponents" name="httpcore">
+			<revision name="4.3" status="release" pubdate="20130729110627" resolver="public" artresolver="main" homepage="http://hc.apache.org/httpcomponents-core-ga" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="1">
+				<metadata-artifact status="no" details="" size="7780" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.httpcomponents\httpcore\ivy-4.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.pom"/>
+				<caller organisation="org.apache.lucene" name="replicator" conf="http" rev="4.3" rev-constraint-default="4.3" rev-constraint-dynamic="4.3" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="httpcore" type="jar" ext="jar" status="no" details="" size="282160" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.httpcomponents\httpcore\jars\httpcore-4.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

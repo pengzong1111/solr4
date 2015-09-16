@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.apache.solr"
+		module="example"
+		revision="working@Zong-PC"
+		conf="start"
+		confs="start"
+		date="20150511184733"/>
+	<dependencies>
+		<module organisation="org.eclipse.jetty" name="jetty-start">
+			<revision name="8.1.10.v20130312" status="release" pubdate="20130312115507" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<metadata-artifact status="no" details="" size="8357" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-start\ivy-8.1.10.v20130312.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-start/8.1.10.v20130312/jetty-start-8.1.10.v20130312.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="start" rev="8.1.10.v20130312" rev-constraint-default="8.1.10.v20130312" rev-constraint-dynamic="8.1.10.v20130312" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jetty-start" type="jar" ext="jar" status="no" details="" size="46294" time="0" location="C:\Users\Zong\.ivy2\cache\org.eclipse.jetty\jetty-start\jars\jetty-start-8.1.10.v20130312.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-start/8.1.10.v20130312/jetty-start-8.1.10.v20130312.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

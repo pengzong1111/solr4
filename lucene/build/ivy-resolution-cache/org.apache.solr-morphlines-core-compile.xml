@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.apache.solr"
+		module="morphlines-core"
+		revision="working@Zong-PC"
+		conf="compile"
+		confs="compile"
+		date="20150511184645"/>
+	<dependencies>
+		<module organisation="org.kitesdk" name="kite-morphlines-avro">
+			<revision name="0.11.0" status="release" pubdate="20140313113917" resolver="cloudera" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="1">
+				<metadata-artifact status="no" details="" size="30760" time="0" location="C:\Users\Zong\.ivy2\cache\org.kitesdk\kite-morphlines-avro\ivy-0.11.0.xml" searched="false" origin-is-local="false" origin-location="https://repository.cloudera.com/artifactory/repo/org/kitesdk/kite-morphlines-avro/0.11.0/kite-morphlines-avro-0.11.0.pom"/>
+				<caller organisation="org.apache.solr" name="morphlines-core" conf="compile" rev="0.11.0" rev-constraint-default="0.11.0" rev-constraint-dynamic="0.11.0" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="kite-morphlines-avro" type="jar" ext="jar" status="no" details="" size="38618" time="0" location="C:\Users\Zong\.ivy2\cache\org.kitesdk\kite-morphlines-avro\jars\kite-morphlines-avro-0.11.0.jar">
+						<origin-location is-local="false" location="https://repository.cloudera.com/artifactory/repo/org/kitesdk/kite-morphlines-avro/0.11.0/kite-morphlines-avro-0.11.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.kitesdk" name="kite-morphlines-core">
+			<revision name="0.11.0" status="release" pubdate="20140313113919" resolver="cloudera" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="0">
+				<metadata-artifact status="no" details="" size="31004" time="0" location="C:\Users\Zong\.ivy2\cache\org.kitesdk\kite-morphlines-core\ivy-0.11.0.xml" searched="false" origin-is-local="false" origin-location="https://repository.cloudera.com/artifactory/repo/org/kitesdk/kite-morphlines-core/0.11.0/kite-morphlines-core-0.11.0.pom"/>
+				<caller organisation="org.apache.solr" name="morphlines-core" conf="compile" rev="0.11.0" rev-constraint-default="0.11.0" rev-constraint-dynamic="0.11.0" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="kite-morphlines-core" type="jar" ext="jar" status="no" details="" size="244272" time="0" location="C:\Users\Zong\.ivy2\cache\org.kitesdk\kite-morphlines-core\jars\kite-morphlines-core-0.11.0.jar">
+						<origin-location is-local="false" location="https://repository.cloudera.com/artifactory/repo/org/kitesdk/kite-morphlines-core/0.11.0/kite-morphlines-core-0.11.0.jar"/>
+					</artifact>
+					<artifact name="kite-morphlines-core" type="test" ext="jar" extra-classifier="tests" status="no" details="" size="1417302" time="0" location="C:\Users\Zong\.ivy2\cache\org.kitesdk\kite-morphlines-core\tests\kite-morphlines-core-0.11.0-tests.jar">
+						<origin-location is-local="false" location="https://repository.cloudera.com/artifactory/repo/org/kitesdk/kite-morphlines-core/0.11.0/kite-morphlines-core-0.11.0-tests.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.codahale.metrics" name="metrics-healthchecks">
+			<revision name="3.0.1" status="release" pubdate="20130723181332" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="3">
+				<metadata-artifact status="no" details="" size="4928" time="0" location="C:\Users\Zong\.ivy2\cache\com.codahale.metrics\metrics-healthchecks\ivy-3.0.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/codahale/metrics/metrics-healthchecks/3.0.1/metrics-healthchecks-3.0.1.pom"/>
+				<caller organisation="org.apache.solr" name="morphlines-core" conf="compile" rev="3.0.1" rev-constraint-default="3.0.1" rev-constraint-dynamic="3.0.1" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="metrics-healthchecks" type="bundle" ext="jar" status="no" details="" size="9131" time="0" location="C:\Users\Zong\.ivy2\cache\com.codahale.metrics\metrics-healthchecks\bundles\metrics-healthchecks-3.0.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/codahale/metrics/metrics-healthchecks/3.0.1/metrics-healthchecks-3.0.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.codahale.metrics" name="metrics-core">
+			<revision name="3.0.1" status="release" pubdate="20130723181253" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="2">
+				<metadata-artifact status="no" details="" size="4844" time="0" location="C:\Users\Zong\.ivy2\cache\com.codahale.metrics\metrics-core\ivy-3.0.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/codahale/metrics/metrics-core/3.0.1/metrics-core-3.0.1.pom"/>
+				<caller organisation="org.apache.solr" name="morphlines-core" conf="compile" rev="3.0.1" rev-constraint-default="3.0.1" rev-constraint-dynamic="3.0.1" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="metrics-core" type="bundle" ext="jar" status="no" details="" size="85449" time="0" location="C:\Users\Zong\.ivy2\cache\com.codahale.metrics\metrics-core\bundles\metrics-core-3.0.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/codahale/metrics/metrics-core/3.0.1/metrics-core-3.0.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe" name="config">
+			<revision name="1.0.2" status="release" pubdate="20130703090814" resolver="public" artresolver="main" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="4">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2940" time="0" location="C:\Users\Zong\.ivy2\cache\com.typesafe\config\ivy-1.0.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/config/1.0.2/config-1.0.2.pom"/>
+				<caller organisation="org.apache.solr" name="morphlines-core" conf="compile" rev="1.0.2" rev-constraint-default="1.0.2" rev-constraint-dynamic="1.0.2" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="config" type="bundle" ext="jar" status="no" details="" size="187497" time="0" location="C:\Users\Zong\.ivy2\cache\com.typesafe\config\bundles\config-1.0.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/config/1.0.2/config-1.0.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.apache.solr"
+		module="map-reduce"
+		revision="working@Zong-PC"
+		conf="test"
+		confs="compile, test, test.DfsMiniCluster"
+		date="20150511184610"/>
+	<dependencies>
+	</dependencies>
+</ivy-report>

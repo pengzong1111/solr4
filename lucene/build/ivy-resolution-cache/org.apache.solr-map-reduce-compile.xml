@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.apache.solr"
+		module="map-reduce"
+		revision="working@Zong-PC"
+		conf="compile"
+		confs="compile, test, test.DfsMiniCluster"
+		date="20150511184610"/>
+	<dependencies>
+		<module organisation="org.kitesdk" name="kite-morphlines-hadoop-sequencefile">
+			<revision name="0.11.0" status="release" pubdate="20140313113917" resolver="cloudera" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="4">
+				<metadata-artifact status="no" details="" size="28435" time="0" location="C:\Users\Zong\.ivy2\cache\org.kitesdk\kite-morphlines-hadoop-sequencefile\ivy-0.11.0.xml" searched="false" origin-is-local="false" origin-location="https://repository.cloudera.com/artifactory/repo/org/kitesdk/kite-morphlines-hadoop-sequencefile/0.11.0/kite-morphlines-hadoop-sequencefile-0.11.0.pom"/>
+				<caller organisation="org.apache.solr" name="map-reduce" conf="compile" rev="0.11.0" rev-constraint-default="0.11.0" rev-constraint-dynamic="0.11.0" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="kite-morphlines-hadoop-sequencefile" type="jar" ext="jar" status="no" details="" size="8826" time="0" location="C:\Users\Zong\.ivy2\cache\org.kitesdk\kite-morphlines-hadoop-sequencefile\jars\kite-morphlines-hadoop-sequencefile-0.11.0.jar">
+						<origin-location is-local="false" location="https://repository.cloudera.com/artifactory/repo/org/kitesdk/kite-morphlines-hadoop-sequencefile/0.11.0/kite-morphlines-hadoop-sequencefile-0.11.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.kitesdk" name="kite-morphlines-saxon">
+			<revision name="0.11.0" status="release" pubdate="20140313113919" resolver="cloudera" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="2">
+				<metadata-artifact status="no" details="" size="29200" time="0" location="C:\Users\Zong\.ivy2\cache\org.kitesdk\kite-morphlines-saxon\ivy-0.11.0.xml" searched="false" origin-is-local="false" origin-location="https://repository.cloudera.com/artifactory/repo/org/kitesdk/kite-morphlines-saxon/0.11.0/kite-morphlines-saxon-0.11.0.pom"/>
+				<caller organisation="org.apache.solr" name="map-reduce" conf="compile" rev="0.11.0" rev-constraint-default="0.11.0" rev-constraint-dynamic="0.11.0" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="kite-morphlines-saxon" type="jar" ext="jar" status="no" details="" size="32252" time="0" location="C:\Users\Zong\.ivy2\cache\org.kitesdk\kite-morphlines-saxon\jars\kite-morphlines-saxon-0.11.0.jar">
+						<origin-location is-local="false" location="https://repository.cloudera.com/artifactory/repo/org/kitesdk/kite-morphlines-saxon/0.11.0/kite-morphlines-saxon-0.11.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.sf.saxon" name="Saxon-HE">
+			<revision name="9.5.1-4" status="release" pubdate="20140123063922" resolver="public" artresolver="main" homepage="http://www.saxonica.com/" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="3">
+				<license name="Mozilla Public License Version 2.0" url="http://www.mozilla.org/MPL/2.0/"/>
+				<metadata-artifact status="no" details="" size="3672" time="0" location="C:\Users\Zong\.ivy2\cache\net.sf.saxon\Saxon-HE\ivy-9.5.1-4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/9.5.1-4/Saxon-HE-9.5.1-4.pom"/>
+				<caller organisation="org.apache.solr" name="map-reduce" conf="compile" rev="9.5.1-4" rev-constraint-default="9.5.1-4" rev-constraint-dynamic="9.5.1-4" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="Saxon-HE" type="jar" ext="jar" status="no" details="" size="10255845" time="0" location="C:\Users\Zong\.ivy2\cache\net.sf.saxon\Saxon-HE\jars\Saxon-HE-9.5.1-4.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/9.5.1-4/Saxon-HE-9.5.1-4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.sourceforge.argparse4j" name="argparse4j">
+			<revision name="0.4.3" status="release" pubdate="20140105044559" resolver="public" artresolver="main" homepage="http://argparse4j.sourceforge.net" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="1">
+				<license name="MIT" url="https://raw.github.com/tatsuhiro-t/argparse4j/master/LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="3492" time="0" location="C:\Users\Zong\.ivy2\cache\net.sourceforge.argparse4j\argparse4j\ivy-0.4.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/net/sourceforge/argparse4j/argparse4j/0.4.3/argparse4j-0.4.3.pom"/>
+				<caller organisation="org.apache.solr" name="map-reduce" conf="compile" rev="0.4.3" rev-constraint-default="0.4.3" rev-constraint-dynamic="0.4.3" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="argparse4j" type="jar" ext="jar" status="no" details="" size="81722" time="0" location="C:\Users\Zong\.ivy2\cache\net.sourceforge.argparse4j\argparse4j\jars\argparse4j-0.4.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/net/sourceforge/argparse4j/argparse4j/0.4.3/argparse4j-0.4.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.hadoop" name="hadoop-mapreduce-client-core">
+			<revision name="2.2.0" status="release" pubdate="20131007023626" resolver="public" artresolver="main" homepage="" downloaded="true" searched="true" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="0">
+				<metadata-artifact status="successful" details="" size="3085" time="353" location="C:\Users\Zong\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-core\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\Zong\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-core\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/2.2.0/hadoop-mapreduce-client-core-2.2.0.pom"/>
+				<caller organisation="org.apache.solr" name="map-reduce" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="hadoop-mapreduce-client-core" type="jar" ext="jar" status="no" details="" size="1455001" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-core\jars\hadoop-mapreduce-client-core-2.2.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/2.2.0/hadoop-mapreduce-client-core-2.2.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

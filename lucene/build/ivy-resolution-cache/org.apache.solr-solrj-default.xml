@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.apache.solr"
+		module="solrj"
+		revision="working@Zong-PC"
+		conf="default"
+		confs="default"
+		date="20150511184734"/>
+	<dependencies>
+		<module organisation="org.slf4j" name="jul-to-slf4j">
+			<revision name="1.6.6" status="release" pubdate="20120611104322" resolver="public" artresolver="main" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="10">
+				<metadata-artifact status="no" details="" size="4853" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\jul-to-slf4j\ivy-1.6.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/jul-to-slf4j/1.6.6/jul-to-slf4j-1.6.6.pom"/>
+				<caller organisation="org.apache.solr" name="solrj" conf="default" rev="1.6.6" rev-constraint-default="1.6.6" rev-constraint-dynamic="1.6.6" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jul-to-slf4j" type="jar" ext="jar" status="no" details="" size="4955" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\jul-to-slf4j\jars\jul-to-slf4j-1.6.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/jul-to-slf4j/1.6.6/jul-to-slf4j-1.6.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-log4j12">
+			<revision name="1.6.6" status="release" pubdate="20120611104226" resolver="public" artresolver="main" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="11">
+				<metadata-artifact status="no" details="" size="4818" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\slf4j-log4j12\ivy-1.6.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.6/slf4j-log4j12-1.6.6.pom"/>
+				<caller organisation="org.apache.solr" name="solrj" conf="default" rev="1.6.6" rev-constraint-default="1.6.6" rev-constraint-dynamic="1.6.6" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="slf4j-log4j12" type="jar" ext="jar" status="no" details="" size="9711" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\slf4j-log4j12\jars\slf4j-log4j12-1.6.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.6/slf4j-log4j12-1.6.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="jcl-over-slf4j">
+			<revision name="1.6.6" status="release" pubdate="20120611104300" resolver="public" artresolver="main" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="9">
+				<metadata-artifact status="no" details="" size="4818" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\jcl-over-slf4j\ivy-1.6.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.6.6/jcl-over-slf4j-1.6.6.pom"/>
+				<caller organisation="org.apache.solr" name="solrj" conf="default" rev="1.6.6" rev-constraint-default="1.6.6" rev-constraint-dynamic="1.6.6" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jcl-over-slf4j" type="jar" ext="jar" status="no" details="" size="17289" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\jcl-over-slf4j\jars\jcl-over-slf4j-1.6.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.6.6/jcl-over-slf4j-1.6.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-api">
+			<revision name="1.6.6" status="release" pubdate="20120611104148" resolver="public" artresolver="main" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="8">
+				<metadata-artifact status="no" details="" size="4642" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\slf4j-api\ivy-1.6.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.pom"/>
+				<caller organisation="org.apache.solr" name="solrj" conf="default" rev="1.6.6" rev-constraint-default="1.6.6" rev-constraint-dynamic="1.6.6" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="slf4j-api" type="jar" ext="jar" status="no" details="" size="26176" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\slf4j-api\jars\slf4j-api-1.6.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="log4j" name="log4j">
+			<revision name="1.2.16" status="release" pubdate="20100331002544" resolver="cloudera" artresolver="main" homepage="http://logging.apache.org/log4j/1.2/" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="7">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3559" time="0" location="C:\Users\Zong\.ivy2\cache\log4j\log4j\ivy-1.2.16.xml" searched="false" origin-is-local="false" origin-location="https://repository.cloudera.com/content/groups/cdh-build/log4j/log4j/1.2.16/log4j-1.2.16.pom"/>
+				<caller organisation="org.apache.solr" name="solrj" conf="default" rev="1.2.16" rev-constraint-default="1.2.16" rev-constraint-dynamic="1.2.16" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="log4j" type="bundle" ext="jar" status="no" details="" size="481535" time="0" location="C:\Users\Zong\.ivy2\cache\log4j\log4j\bundles\log4j-1.2.16.jar">
+						<origin-location is-local="false" location="https://repository.cloudera.com/content/groups/cdh-build/log4j/log4j/1.2.16/log4j-1.2.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.noggit" name="noggit">
+			<revision name="0.5" status="release" pubdate="20120506214108" resolver="public" artresolver="main" homepage="http://noggit.org" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="6">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2905" time="0" location="C:\Users\Zong\.ivy2\cache\org.noggit\noggit\ivy-0.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/noggit/noggit/0.5/noggit-0.5.pom"/>
+				<caller organisation="org.apache.solr" name="solrj" conf="default" rev="0.5" rev-constraint-default="0.5" rev-constraint-dynamic="0.5" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="noggit" type="jar" ext="jar" status="no" details="" size="22545" time="0" location="C:\Users\Zong\.ivy2\cache\org.noggit\noggit\jars\noggit-0.5.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/noggit/noggit/0.5/noggit-0.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.codehaus.woodstox" name="wstx-asl">
+			<revision name="3.2.7" status="release" pubdate="20080903023303" resolver="default" artresolver="main" homepage="http://woodstox.codehaus.org" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="5">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2721" time="0" location="C:\Users\Zong\.ivy2\cache\org.codehaus.woodstox\wstx-asl\ivy-3.2.7.xml" searched="false" origin-is-local="false" origin-location="https://repository.cloudera.com/content/groups/cdh-build/org/codehaus/woodstox/wstx-asl/3.2.7/wstx-asl-3.2.7.pom"/>
+				<caller organisation="org.apache.solr" name="solrj" conf="default" rev="3.2.7" rev-constraint-default="3.2.7" rev-constraint-dynamic="3.2.7" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="wstx-asl" type="jar" ext="jar" status="no" details="" size="520969" time="0" location="C:\Users\Zong\.ivy2\cache\org.codehaus.woodstox\wstx-asl\jars\wstx-asl-3.2.7.jar">
+						<origin-location is-local="false" location="https://repository.cloudera.com/content/groups/cdh-build/org/codehaus/woodstox/wstx-asl/3.2.7/wstx-asl-3.2.7.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-io" name="commons-io">
+			<revision name="2.1" status="release" pubdate="20111003173236" resolver="public" artresolver="main" homepage="http://commons.apache.org/io/" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="4">
+				<metadata-artifact status="no" details="" size="7913" time="0" location="C:\Users\Zong\.ivy2\cache\commons-io\commons-io\ivy-2.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/commons-io/commons-io/2.1/commons-io-2.1.pom"/>
+				<caller organisation="org.apache.solr" name="solrj" conf="default" rev="2.1" rev-constraint-default="2.1" rev-constraint-dynamic="2.1" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="commons-io" type="jar" ext="jar" status="no" details="" size="163151" time="0" location="C:\Users\Zong\.ivy2\cache\commons-io\commons-io\jars\commons-io-2.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/commons-io/commons-io/2.1/commons-io-2.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.httpcomponents" name="httpmime">
+			<revision name="4.3.1" status="release" pubdate="20131003154349" resolver="public" artresolver="main" homepage="http://hc.apache.org/httpcomponents-client" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="2">
+				<metadata-artifact status="no" details="" size="10657" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.httpcomponents\httpmime\ivy-4.3.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpmime/4.3.1/httpmime-4.3.1.pom"/>
+				<caller organisation="org.apache.solr" name="solrj" conf="default" rev="4.3.1" rev-constraint-default="4.3.1" rev-constraint-dynamic="4.3.1" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="httpmime" type="jar" ext="jar" status="no" details="" size="37078" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.httpcomponents\httpmime\jars\httpmime-4.3.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpmime/4.3.1/httpmime-4.3.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.httpcomponents" name="httpclient">
+			<revision name="4.3.1" status="release" pubdate="20131003154302" resolver="public" artresolver="main" homepage="http://hc.apache.org/httpcomponents-client" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="1">
+				<metadata-artifact status="no" details="" size="10735" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.httpcomponents\httpclient\ivy-4.3.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.pom"/>
+				<caller organisation="org.apache.solr" name="solrj" conf="default" rev="4.3.1" rev-constraint-default="4.3.1" rev-constraint-dynamic="4.3.1" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="httpclient" type="jar" ext="jar" status="no" details="" size="585602" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.httpcomponents\httpclient\jars\httpclient-4.3.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.httpcomponents" name="httpcore">
+			<revision name="4.3" status="release" pubdate="20130729110627" resolver="public" artresolver="main" homepage="http://hc.apache.org/httpcomponents-core-ga" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="3">
+				<metadata-artifact status="no" details="" size="7780" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.httpcomponents\httpcore\ivy-4.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.pom"/>
+				<caller organisation="org.apache.solr" name="solrj" conf="default" rev="4.3" rev-constraint-default="4.3" rev-constraint-dynamic="4.3" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="httpcore" type="jar" ext="jar" status="no" details="" size="282160" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.httpcomponents\httpcore\jars\httpcore-4.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.zookeeper" name="zookeeper">
+			<revision name="3.4.5" status="release" pubdate="20121118195742" resolver="default" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="0">
+				<metadata-artifact status="no" details="" size="4014" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.zookeeper\zookeeper\ivy-3.4.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/zookeeper/zookeeper/3.4.5/zookeeper-3.4.5.pom"/>
+				<caller organisation="org.apache.solr" name="solrj" conf="default" rev="3.4.5" rev-constraint-default="3.4.5" rev-constraint-dynamic="3.4.5" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="zookeeper" type="jar" ext="jar" status="no" details="" size="779974" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.zookeeper\zookeeper\jars\zookeeper-3.4.5.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/zookeeper/zookeeper/3.4.5/zookeeper-3.4.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

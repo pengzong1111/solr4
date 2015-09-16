@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.apache.solr"
+		module="example"
+		revision="working@Zong-PC"
+		conf="logging"
+		confs="logging"
+		date="20150511184733"/>
+	<dependencies>
+		<module organisation="org.slf4j" name="jul-to-slf4j">
+			<revision name="1.6.6" status="release" pubdate="20120611104322" resolver="public" artresolver="main" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="3">
+				<metadata-artifact status="no" details="" size="4853" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\jul-to-slf4j\ivy-1.6.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/jul-to-slf4j/1.6.6/jul-to-slf4j-1.6.6.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="logging" rev="1.6.6" rev-constraint-default="1.6.6" rev-constraint-dynamic="1.6.6" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jul-to-slf4j" type="jar" ext="jar" status="no" details="" size="4955" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\jul-to-slf4j\jars\jul-to-slf4j-1.6.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/jul-to-slf4j/1.6.6/jul-to-slf4j-1.6.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-log4j12">
+			<revision name="1.6.6" status="release" pubdate="20120611104226" resolver="public" artresolver="main" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="4">
+				<metadata-artifact status="no" details="" size="4818" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\slf4j-log4j12\ivy-1.6.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.6/slf4j-log4j12-1.6.6.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="logging" rev="1.6.6" rev-constraint-default="1.6.6" rev-constraint-dynamic="1.6.6" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="slf4j-log4j12" type="jar" ext="jar" status="no" details="" size="9711" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\slf4j-log4j12\jars\slf4j-log4j12-1.6.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.6.6/slf4j-log4j12-1.6.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="jcl-over-slf4j">
+			<revision name="1.6.6" status="release" pubdate="20120611104300" resolver="public" artresolver="main" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="2">
+				<metadata-artifact status="no" details="" size="4818" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\jcl-over-slf4j\ivy-1.6.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.6.6/jcl-over-slf4j-1.6.6.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="logging" rev="1.6.6" rev-constraint-default="1.6.6" rev-constraint-dynamic="1.6.6" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="jcl-over-slf4j" type="jar" ext="jar" status="no" details="" size="17289" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\jcl-over-slf4j\jars\jcl-over-slf4j-1.6.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.6.6/jcl-over-slf4j-1.6.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-api">
+			<revision name="1.6.6" status="release" pubdate="20120611104148" resolver="public" artresolver="main" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="1">
+				<metadata-artifact status="no" details="" size="4642" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\slf4j-api\ivy-1.6.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="logging" rev="1.6.6" rev-constraint-default="1.6.6" rev-constraint-dynamic="1.6.6" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="slf4j-api" type="jar" ext="jar" status="no" details="" size="26176" time="0" location="C:\Users\Zong\.ivy2\cache\org.slf4j\slf4j-api\jars\slf4j-api-1.6.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="log4j" name="log4j">
+			<revision name="1.2.16" status="release" pubdate="20100331002544" resolver="cloudera" artresolver="main" homepage="http://logging.apache.org/log4j/1.2/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3559" time="0" location="C:\Users\Zong\.ivy2\cache\log4j\log4j\ivy-1.2.16.xml" searched="false" origin-is-local="false" origin-location="https://repository.cloudera.com/content/groups/cdh-build/log4j/log4j/1.2.16/log4j-1.2.16.pom"/>
+				<caller organisation="org.apache.solr" name="example" conf="logging" rev="1.2.16" rev-constraint-default="1.2.16" rev-constraint-dynamic="1.2.16" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="log4j" type="bundle" ext="jar" status="no" details="" size="481535" time="0" location="C:\Users\Zong\.ivy2\cache\log4j\log4j\bundles\log4j-1.2.16.jar">
+						<origin-location is-local="false" location="https://repository.cloudera.com/content/groups/cdh-build/log4j/log4j/1.2.16/log4j-1.2.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

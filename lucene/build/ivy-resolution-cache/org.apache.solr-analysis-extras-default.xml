@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.apache.solr"
+		module="analysis-extras"
+		revision="working@Zong-PC"
+		conf="default"
+		confs="default"
+		date="20150511184719"/>
+	<dependencies>
+		<module organisation="org.carrot2" name="morfologik-polish">
+			<revision name="1.7.1" status="release" pubdate="20130716095600" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="1">
+				<metadata-artifact status="no" details="" size="5328" time="0" location="C:\Users\Zong\.ivy2\cache\org.carrot2\morfologik-polish\ivy-1.7.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/carrot2/morfologik-polish/1.7.1/morfologik-polish-1.7.1.pom"/>
+				<caller organisation="org.apache.solr" name="analysis-extras" conf="default" rev="1.7.1" rev-constraint-default="1.7.1" rev-constraint-dynamic="1.7.1" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="morfologik-polish" type="jar" ext="jar" status="no" details="" size="1947259" time="0" location="C:\Users\Zong\.ivy2\cache\org.carrot2\morfologik-polish\jars\morfologik-polish-1.7.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/carrot2/morfologik-polish/1.7.1/morfologik-polish-1.7.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.carrot2" name="morfologik-stemming">
+			<revision name="1.7.1" status="release" pubdate="20130716095520" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="3">
+				<metadata-artifact status="no" details="" size="5555" time="0" location="C:\Users\Zong\.ivy2\cache\org.carrot2\morfologik-stemming\ivy-1.7.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/carrot2/morfologik-stemming/1.7.1/morfologik-stemming-1.7.1.pom"/>
+				<caller organisation="org.apache.solr" name="analysis-extras" conf="default" rev="1.7.1" rev-constraint-default="1.7.1" rev-constraint-dynamic="1.7.1" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="morfologik-stemming" type="jar" ext="jar" status="no" details="" size="36198" time="0" location="C:\Users\Zong\.ivy2\cache\org.carrot2\morfologik-stemming\jars\morfologik-stemming-1.7.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/carrot2/morfologik-stemming/1.7.1/morfologik-stemming-1.7.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.carrot2" name="morfologik-fsa">
+			<revision name="1.7.1" status="release" pubdate="20130716095511" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="2">
+				<metadata-artifact status="no" details="" size="5135" time="0" location="C:\Users\Zong\.ivy2\cache\org.carrot2\morfologik-fsa\ivy-1.7.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/carrot2/morfologik-fsa/1.7.1/morfologik-fsa-1.7.1.pom"/>
+				<caller organisation="org.apache.solr" name="analysis-extras" conf="default" rev="1.7.1" rev-constraint-default="1.7.1" rev-constraint-dynamic="1.7.1" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="morfologik-fsa" type="jar" ext="jar" status="no" details="" size="54042" time="0" location="C:\Users\Zong\.ivy2\cache\org.carrot2\morfologik-fsa\jars\morfologik-fsa-1.7.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/carrot2/morfologik-fsa/1.7.1/morfologik-fsa-1.7.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.ibm.icu" name="icu4j">
+			<revision name="52.1" status="release" pubdate="20131007144542" resolver="public" artresolver="main" homepage="http://icu-project.org/" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="0">
+				<license name="ICU License" url="http://source.icu-project.org/repos/icu/icu/trunk/license.html"/>
+				<metadata-artifact status="no" details="" size="2672" time="0" location="C:\Users\Zong\.ivy2\cache\com.ibm.icu\icu4j\ivy-52.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/ibm/icu/icu4j/52.1/icu4j-52.1.pom"/>
+				<caller organisation="org.apache.solr" name="analysis-extras" conf="default" rev="52.1" rev-constraint-default="52.1" rev-constraint-dynamic="52.1" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="icu4j" type="jar" ext="jar" status="no" details="" size="10466977" time="0" location="C:\Users\Zong\.ivy2\cache\com.ibm.icu\icu4j\jars\icu4j-52.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/ibm/icu/icu4j/52.1/icu4j-52.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.apache.lucene"
+		module="core-tools"
+		revision="working@Zong-PC"
+		conf="default"
+		confs="default"
+		date="20150511184000"/>
+	<dependencies>
+		<module organisation="org.apache.ant" name="ant">
+			<revision name="1.8.2" status="release" pubdate="20101227111008" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="0">
+				<metadata-artifact status="no" details="" size="2948" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.ant\ant\ivy-1.8.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/ant/ant/1.8.2/ant-1.8.2.pom"/>
+				<caller organisation="org.apache.lucene" name="core-tools" conf="default" rev="1.8.2" rev-constraint-default="1.8.2" rev-constraint-dynamic="1.8.2" callerrev="working@Zong-PC"/>
+				<artifacts>
+					<artifact name="ant" type="jar" ext="jar" status="no" details="" size="1933743" time="0" location="C:\Users\Zong\.ivy2\cache\org.apache.ant\ant\jars\ant-1.8.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/ant/ant/1.8.2/ant-1.8.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>
