@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="default"
 		confs="default"
-		date="20150511184019"/>
+		date="20160120234020"/>
 	<dependencies>
 		<module organisation="org.apache.uima" name="Tagger">
 			<revision name="2.3.1" status="release" pubdate="20110824100223" resolver="public" artresolver="main" homepage="${uimaWebsiteUrl}" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="0">

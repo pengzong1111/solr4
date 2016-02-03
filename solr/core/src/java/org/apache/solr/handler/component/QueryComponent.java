@@ -17,7 +17,24 @@
 
 package org.apache.solr.handler.component;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
+
 import org.apache.lucene.index.AtomicReaderContext;
+import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexReaderContext;
 import org.apache.lucene.index.ReaderUtil;
 import org.apache.lucene.index.Term;
@@ -37,8 +54,13 @@ import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrException;
-import org.apache.solr.common.params.*;
+import org.apache.solr.common.params.CommonParams;
 import org.apache.solr.common.params.CursorMarkParams;
+import org.apache.solr.common.params.GroupParams;
+import org.apache.solr.common.params.ModifiableSolrParams;
+import org.apache.solr.common.params.MoreLikeThisParams;
+import org.apache.solr.common.params.ShardParams;
+import org.apache.solr.common.params.SolrParams;
 import org.apache.solr.common.util.NamedList;
 import org.apache.solr.common.util.SimpleOrderedMap;
 import org.apache.solr.common.util.StrUtils;
@@ -83,22 +105,6 @@ import org.apache.solr.search.grouping.endresulttransformer.MainEndResultTransfo
 import org.apache.solr.search.grouping.endresulttransformer.SimpleEndResultTransformer;
 import org.apache.solr.util.SolrPluginUtils;
 
-import org.apache.commons.lang.StringUtils;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-
 /**
  * TODO!
  * 
@@ -108,6 +114,9 @@ import java.util.Map;
 public class QueryComponent extends SearchComponent
 {
   public static final String COMPONENT_NAME = "query";
+  
+  //zong: cache size of overall collection
+ // public static long COLLECTION_SIZE = -1;
   
   @Override
   public void prepare(ResponseBuilder rb) throws IOException
@@ -142,16 +151,19 @@ public class QueryComponent extends SearchComponent
 
     try {
 /////////zong adding timestamp start 
-long t0 = System.currentTimeMillis();
+//long t0 = System.currentTimeMillis();
       QParser parser = QParser.getParser(rb.getQueryString(), defType, req);
       Query q = parser.getQuery();
-long t1 = System.currentTimeMillis();    
+//long t1 = System.currentTimeMillis();    
 ////////zong adding timestamp end
-System.out.println("===============.......query parser is: " + parser.getClass().getName());
-      System.out.println("==========.......parsed query is: " + q.toString());
-      System.out.println("==========.......parsed type is: " + q.getClass().toString());
-      System.out.println("==========.......q parsing time: " + (t1 - t0) + " milliseconds...");
-rsp.add("query_parse_time", (t1-t0));
+//System.out.println("===============.......query parser is: " + parser.getClass().getName());
+  //    System.out.println("==========.......parsed query is: " + q.toString());
+    //  System.out.println("==========.......parsed type is: " + q.getClass().toString());
+      //System.out.println("==========.......q parsing time: " + (t1 - t0) + " milliseconds...");
+//rsp.add("query_parse_time", (t1-t0));
+//rsp.add("query_parser", parser.getClass().getCanonicalName());
+//rsp.add("query_type", q.getClass().getCanonicalName());
+//rsp.add("query_string", q.toString());
       if (q == null) {
         // normalize a null query to a query that matches nothing
         q = new BooleanQuery();        
@@ -159,7 +171,53 @@ rsp.add("query_parse_time", (t1-t0));
       rb.setQuery( q );
       rb.setSortSpec( parser.getSort(true) );
       rb.setQparser(parser);
-      
+// zong edit: fetch #postings for each term in the query
+      {
+        long timeStart = System.currentTimeMillis();
+        IndexReader reader = rb.req.getSearcher().getIndexReader();
+     /*   if(COLLECTION_SIZE == -1 || COLLECTION_SIZE == 0) {
+          COLLECTION_SIZE = reader.getDocCount("ocr");
+          System.out.println("~~~~~~~collection size is : " + COLLECTION_SIZE);
+        }*/
+        
+        Query reWrittenQuery = q.rewrite(reader);
+        Set<Term> terms = new HashSet<Term>();
+        reWrittenQuery.extractTerms(terms);
+        rsp.add("termNum", terms.size());
+        int postings = 0;
+        int[] termPostingSizes = new int[terms.size()];
+        int i = 0;
+        if(terms.size() != 0) {
+          NamedList<Object> termList = new SimpleOrderedMap<Object>();
+          for(Term term : terms) {
+            int count = reader.docFreq(term);
+            termList.add(term.text(), count);
+            postings += count;
+            
+            termPostingSizes[i++] = count;
+          }
+          rsp.add("postings", postings);
+          rsp.add("termList", termList);
+        }
+        long timeEnd = System.currentTimeMillis();
+        rsp.add("time_get_postings", (timeEnd - timeStart));
+        
+        //the probability that all terms exists in a document given they are indepent. 
+  //      double jointProb = 1.0;
+  //      double ratio = 0;
+        /*if(terms.size() == 2)*/ {
+         /* Arrays.sort(termPostingSizes);
+          for(i=0; i<termPostingSizes.length; i++) {
+              if(i+1 < termPostingSizes.length) {
+                ratio = (double)termPostingSizes[i] / (double)termPostingSizes[i+1];
+              }
+              jointProb *= ((double)termPostingSizes[i]) / ((double)COLLECTION_SIZE);
+          }*/
+          rsp.add("posting_len_ratio", 0);
+          rsp.add("joint_probability", 0);
+          rsp.add("expected_hits", 0);
+        }
+      }
       final String cursorStr = rb.req.getParams().get(CursorMarkParams.CURSOR_MARK_PARAM);
       if (null != cursorStr) {
         final CursorMark cursorMark = new CursorMark(rb.req.getSchema(),
@@ -169,7 +227,7 @@ rsp.add("query_parse_time", (t1-t0));
       }
 
   //////zong adding tmestamp start
-  long t2 = System.currentTimeMillis();
+//  long t2 = System.currentTimeMillis();
       String[] fqs = req.getParams().getParams(CommonParams.FQ);
       if (fqs!=null && fqs.length!=0) {
         List<Query> filters = rb.getFilters();
@@ -188,9 +246,9 @@ rsp.add("query_parse_time", (t1-t0));
           rb.setFilters( filters );
         }
       }
-  long t3 = System.currentTimeMillis();
-  System.out.println("==========.......fq parsing time: " + (t3 - t2) + " milliseconds...");
-rsp.add("filter_query_parse_time", (t3 - t2));
+ // long t3 = System.currentTimeMillis();
+ // System.out.println("==========.......fq parsing time: " + (t3 - t2) + " milliseconds...");
+//rsp.add("filter_query_parse_time", (t3 - t2));
  /////zong adding timestamp end
     } catch (SyntaxError e) {
       throw new SolrException(SolrException.ErrorCode.BAD_REQUEST, e);
@@ -505,7 +563,7 @@ rsp.add("actual_search_time", (t1 - t0));
     //
     // TODO: See SOLR-5595
     boolean fsv = req.getParams().getBool(ResponseBuilder.FIELD_SORT_VALUES,false);
-System.out.println("~~~~~~~~~~~~~~~~~~~~~fsv is " + fsv);
+//System.out.println("~~~~~~~~~~~~~~~~~~~~~fsv is " + fsv);
     if(fsv){
       NamedList<Object[]> sortVals = new NamedList<Object[]>(); // order is important for the sort fields
       IndexReaderContext topReaderContext = searcher.getTopReaderContext();

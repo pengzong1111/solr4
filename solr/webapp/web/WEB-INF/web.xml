@@ -70,6 +70,10 @@
       <param-value>/xxx</param-value>
     </init-param>
     -->
+    <init-param>
+      <param-name>max-points</param-name>
+      <param-value>2000</param-value>
+    </init-param>
   </filter>
 
   <filter-mapping>

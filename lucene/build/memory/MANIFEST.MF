@@ -6,8 +6,8 @@ Specification-Title: Lucene Search Engine: memory
 Specification-Version: 4.7.1-SNAPSHOT
 Specification-Vendor: The Apache Software Foundation
 Implementation-Title: org.apache.lucene
-Implementation-Version: 4.7.1-SNAPSHOT ${svnversion} - Zong - 2015-02-
- 23 14:54:54
+Implementation-Version: 4.7.1-SNAPSHOT ${svnversion} - Zong - 2016-01-
+ 20 23:36:38
 Implementation-Vendor: The Apache Software Foundation
 X-Compile-Source-JDK: 1.6
 X-Compile-Target-JDK: 1.6

@@ -62,6 +62,7 @@ final class TermScorer extends Scorer {
    */
   @Override
   public int nextDoc() throws IOException {
+//System.out.println("docEnum actual implementation: " + docsEnum.getClass().getCanonicalName());
     return docsEnum.nextDoc();
   }
   

@@ -473,7 +473,6 @@ public class SolrIndexSearcher extends IndexSearcher implements Closeable,SolrIn
   }
 
   public QueryResult search(QueryResult qr, QueryCommand cmd) throws IOException {
- System.out.println("searching~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     getDocListC(qr,cmd);
     return qr;
   }
@@ -1284,7 +1283,7 @@ public class SolrIndexSearcher extends IndexSearcher implements Closeable,SolrIn
     if (maxDocRequested < 0 || maxDocRequested > maxDoc()) maxDocRequested = maxDoc();
     int supersetMaxDoc= maxDocRequested;
 ////zong printing
-System.out.println("supersetMaxDoc/maxDocRequested~~~~~~:::::::::: " + supersetMaxDoc);
+//System.out.println("supersetMaxDoc/maxDocRequested~~~~~~:::::::::: " + supersetMaxDoc);
     DocList superset = null;
 
     int flags = cmd.getFlags();
@@ -1374,7 +1373,7 @@ System.out.println("supersetMaxDoc/maxDocRequested~~~~~~:::::::::: " + supersetM
     }
 
     if (useFilterCache) {
-System.out.println("use filter cache~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//System.out.println("use filter cache~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
       // now actually use the filter cache.
       // for large filters that match few documents, this may be
       // slower than simply re-executing the query.
@@ -1388,7 +1387,7 @@ System.out.println("use filter cache~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       // perhaps there should be a multi-docset-iterator
       sortDocSet(qr, cmd);
     } else {
-System.out.println("NOT use filter cache~~~~~~~~~~~~~~~~~~~~~~~~~~~get doc set");
+//System.out.println("NOT use filter cache~~~~~~~~~~~~~~~~~~~~~~~~~~~get doc set");
       // do it the normal way...
       if ((flags & GET_DOCSET)!=0) {
         // this currently conflates returning the docset for the base query vs
@@ -1397,7 +1396,7 @@ System.out.println("NOT use filter cache~~~~~~~~~~~~~~~~~~~~~~~~~~~get doc set")
         // cache the docSet matching the query w/o filtering
         if (qDocSet!=null && filterCache!=null && !qr.isPartialResults()) filterCache.put(cmd.getQuery(),qDocSet);
       } else {
-        System.out.println("NOT use filter cache~~~~~~~~~~~~~~~~~~~~~~~~~~~get doc list only");
+    //    System.out.println("NOT use filter cache~~~~~~~~~~~~~~~~~~~~~~~~~~~get doc list only");
         getDocListNC(qr,cmd);
       }
       assert null != out.docList : "docList is null";
@@ -1517,7 +1516,7 @@ System.out.println("NOT use filter cache~~~~~~~~~~~~~~~~~~~~~~~~~~~get doc set")
     boolean terminateEarly = (cmd.getFlags() & TERMINATE_EARLY) == TERMINATE_EARLY;
     
     Query query = QueryUtils.makeQueryable(cmd.getQuery());
-
+//log.info("query type is : " + query.getClass());
     ProcessedFilter pf = getProcessedFilter(cmd.getFilter(), cmd.getFilterList());
     final Filter luceneFilter = pf.filter;
 

@@ -191,15 +191,15 @@ public class SearchHandler extends RequestHandlerBase implements SolrCoreAware ,
     shardHandler1.checkDistributed(rb);
 
     if (timer == null) {
-      log.info("zong printing=============");
+  //    log.info("zong printing=============");
       // non-debugging prepare phase
       for( SearchComponent c : components ) {
        
-        log.info("component preparing: " + c.getClass().getCanonicalName());
+     //   log.info("component preparing: " + c.getClass().getCanonicalName());
        
         c.prepare(rb);
       }
-      log.info("/zong printing=============");
+   //   log.info("/zong printing=============");
     } else {
       // debugging prepare phase
       RTimer subt = timer.sub( "prepare" );
@@ -217,13 +217,13 @@ public class SearchHandler extends RequestHandlerBase implements SolrCoreAware ,
       // The semantics of debugging vs not debugging are different enough that
       // it makes sense to have two control loops
       if(!rb.isDebug()) {
-        log.info("zong printing=============");
+    //    log.info("zong printing=============");
         // Process
         for( SearchComponent c : components ) {
-          log.info("component processing: " + c.getClass().getCanonicalName());
+   //       log.info("component processing: " + c.getClass().getCanonicalName());
           c.process(rb);
         }
-        log.info("zong printing=============");
+ //       log.info("zong printing=============");
       }
       else {
         // Process

@@ -83,7 +83,6 @@ class ConstantScoreAutoRewrite extends TermCollectingRewrite<BooleanQuery> {
 
   @Override
   public Query rewrite(final IndexReader reader, final MultiTermQuery query) throws IOException {
-
     // Get the enum and start visiting terms.  If we
     // exhaust the enum before hitting either of the
     // cutoffs, we use ConstantBooleanQueryRewrite; else,

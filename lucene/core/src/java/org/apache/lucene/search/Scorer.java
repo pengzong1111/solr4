@@ -52,8 +52,11 @@ public abstract class Scorer extends DocsEnum {
    */
   protected Scorer(Weight weight) {
     this.weight = weight;
+//    this.timeSplits = new long[2];
   }
 
+//create a long arr, 0th is entire scoring time, 1st is scoring and updating top k time. (2nd is traversing/merging postings nextDoc() time).
+//public long[] timeSplits;
   /** Scores and collects all matching documents.
    * @param collector The collector to which all matching documents are passed.
    */
@@ -61,9 +64,22 @@ public abstract class Scorer extends DocsEnum {
     assert docID() == -1; // not started
     collector.setScorer(this);
     int doc;
+//long scoringTime = 0;
+//long t0 = System.nanoTime();
     while ((doc = nextDoc()) != NO_MORE_DOCS) {
+//long t00 = System.nanoTime();
       collector.collect(doc);
+//long t11 = System.nanoTime();
+//scoringTime += (t11 - t00);
     }
+//long t1 = System.nanoTime();
+//long overallTime = t1 - t0;
+
+//timeSplits[0] += overallTime;
+//timeSplits[1] += scoringTime;
+/*System.out.println("entire scoring(prority queue collector scoring and update top K + posting list nextDoc) takes: " + overallTime + " milliseconds");
+System.out.println("priority queue collector scoring and update top K takes: " + scoringTime);
+System.out.println("posting list nextDoc takes: " + (overallTime - scoringTime));*/
   }
 
   /**

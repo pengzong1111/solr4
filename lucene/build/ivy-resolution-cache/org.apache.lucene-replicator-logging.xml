@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="logging"
 		confs="http, jetty, start, servlet, logging"
-		date="20150511184025"/>
+		date="20160120233654"/>
 	<dependencies>
 		<module organisation="commons-logging" name="commons-logging">
 			<revision name="1.1.1" status="release" pubdate="20071126152410" resolver="default" artresolver="main" homepage="http://commons.apache.org/logging" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">

@@ -375,7 +375,11 @@ public class IndexSearcher {
    */
   public TopFieldDocs search(Query query, int n,
                              Sort sort) throws IOException {
-    return search(createNormalizedWeight(query), n, sort, false, false);
+    long t0 = System.currentTimeMillis();
+    TopFieldDocs topFieldDocs = search(createNormalizedWeight(query), n, sort, false, false);
+    long t1 = System.currentTimeMillis();
+    System.out.println("===overall time depth2: " + (t1 - t0));
+    return topFieldDocs;
   }
 
   /** Finds the top <code>n</code>
@@ -519,15 +523,12 @@ public class IndexSearcher {
                                 Sort sort, boolean fillFields,
                                 boolean doDocScores, boolean doMaxScore)
       throws IOException {
-
     if (sort == null) throw new NullPointerException("Sort must not be null");
-    
     int limit = reader.maxDoc();
     if (limit == 0) {
       limit = 1;
     }
     nDocs = Math.min(nDocs, limit);
-
     if (executor == null) {
       // use all leaves here!
       return search(leafContexts, weight, after, nDocs, sort, fillFields, doDocScores, doMaxScore);
@@ -568,6 +569,7 @@ public class IndexSearcher {
    */
   protected TopFieldDocs search(List<AtomicReaderContext> leaves, Weight weight, FieldDoc after, int nDocs,
                                 Sort sort, boolean fillFields, boolean doDocScores, boolean doMaxScore) throws IOException {
+long t0 = System.currentTimeMillis();
     // single thread
     int limit = reader.maxDoc();
     if (limit == 0) {
@@ -578,8 +580,14 @@ public class IndexSearcher {
     TopFieldCollector collector = TopFieldCollector.create(sort, nDocs, after,
                                                            fillFields, doDocScores,
                                                            doMaxScore, !weight.scoresDocsOutOfOrder());
+long t1 = System.currentTimeMillis();
+System.out.println("==time for creating top field collector and getting maxDoc: " + (t1 - t0));
     search(leaves, weight, collector);
-    return (TopFieldDocs) collector.topDocs();
+long t000 = System.currentTimeMillis();
+    TopFieldDocs topFieldDocs = (TopFieldDocs) collector.topDocs();
+long t111 = System.currentTimeMillis();
+System.out.println("==time for getting top K results: " + (t111 - t000));
+    return topFieldDocs;
   }
 
   /**
@@ -603,11 +611,14 @@ public class IndexSearcher {
    */
   protected void search(List<AtomicReaderContext> leaves, Weight weight, Collector collector)
       throws IOException {
-
+//long t00 = System.currentTimeMillis();
+//long scorerCreationTime = 0;
+//long[] timeSplits = new long[2];
     // TODO: should we make this
     // threaded...?  the Collector could be sync'd?
     // always use single thread:
     for (AtomicReaderContext ctx : leaves) { // search each subreader
+//long beforeScorerCreation = System.currentTimeMillis();
       try {
         collector.setNextReader(ctx);
       } catch (CollectionTerminatedException e) {
@@ -616,15 +627,28 @@ public class IndexSearcher {
         continue;
       }
       Scorer scorer = weight.scorer(ctx, !collector.acceptsDocsOutOfOrder(), true, ctx.reader().getLiveDocs());
+//long afterScorerCreation = System.currentTimeMillis();
+//scorerCreationTime += (afterScorerCreation - beforeScorerCreation);
       if (scorer != null) {
         try {
           scorer.score(collector);
+          /*{// Zong: add up times for all segments
+            timeSplits[0] += scorer.timeSplits[0];
+            timeSplits[1] += scorer.timeSplits[1];
+          }*/
+ 
         } catch (CollectionTerminatedException e) {
           // collection was terminated prematurely
           // continue with the following leaf
         }
       }
     }
+//long t11= System.currentTimeMillis();
+/*System.out.println("~scorer creation time: " + scorerCreationTime + " milliseconds");
+System.out.println("~entire scoring(prority queue collector scoring and update top K + posting list nextDoc) takes: " + timeSplits[0] + " nanoseconds");
+System.out.println("~priority queue collector scoring and update top K takes: " + timeSplits[1]);
+System.out.println("~posting list traversing/merging nextDoc takes: " + (timeSplits[0] - timeSplits[1]));*/
+//System.out.println("==search time: " + (t11 - t00));
   }
 
   /** Expert: called to re-write queries into primitive queries.
@@ -636,10 +660,10 @@ public class IndexSearcher {
     for (Query rewrittenQuery = query.rewrite(reader); rewrittenQuery != query;
          rewrittenQuery = query.rewrite(reader)) {
       query = rewrittenQuery;
-      System.out.println("=========...=========rewrittenQuery:" + query.toString());
+  //    System.out.println("=========...=========rewrittenQuery:" + query.toString());
     }
     
-    System.out.println("=========...=========query:" + query.toString());
+  //  System.out.println("=========...=========query:" + query.toString());
     return query;
   }
 
@@ -683,6 +707,7 @@ public class IndexSearcher {
    * @lucene.internal
    */
   public Weight createNormalizedWeight(Query query) throws IOException {
+//long t0 = System.currentTimeMillis();
     query = rewrite(query);
     Weight weight = query.createWeight(this);
     float v = weight.getValueForNormalization();
@@ -691,6 +716,8 @@ public class IndexSearcher {
       norm = 1.0f;
     }
     weight.normalize(norm, 1.0f);
+//long t1 = System.currentTimeMillis();
+//System.out.println("==time for creating normalized weight: " + (t1 - t0));
     return weight;
   }
   

@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="test.DfsMiniCluster"
 		confs="test, test.DfsMiniCluster"
-		date="20150511184731"/>
+		date="20160120234600"/>
 	<dependencies>
 		<module organisation="commons-collections" name="commons-collections">
 			<revision name="3.2.1" status="release" pubdate="20080414210924" resolver="default" artresolver="main" homepage="http://commons.apache.org/collections/" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="10">
@@ -54,7 +54,7 @@
 			</revision>
 		</module>
 		<module organisation="org.mortbay.jetty" name="jetty">
-			<revision name="6.1.26" status="release" pubdate="20101110164054" resolver="cloudera" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="7">
+			<revision name="6.1.26" status="release" pubdate="20101110164054" resolver="default" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="7">
 				<metadata-artifact status="no" details="" size="7446" time="0" location="C:\Users\Zong\.ivy2\cache\org.mortbay.jetty\jetty\ivy-6.1.26.xml" searched="false" origin-is-local="false" origin-location="https://repository.cloudera.com/content/groups/cdh-build/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.pom"/>
 				<caller organisation="org.apache.solr" name="core" conf="test.DfsMiniCluster" rev="6.1.26" rev-constraint-default="6.1.26" rev-constraint-dynamic="6.1.26" callerrev="working@Zong-PC"/>
 				<artifacts>

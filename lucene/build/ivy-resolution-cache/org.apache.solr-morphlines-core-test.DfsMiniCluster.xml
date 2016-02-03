@@ -7,10 +7,10 @@
 		revision="working@Zong-PC"
 		conf="test.DfsMiniCluster"
 		confs="test, test.DfsMiniCluster"
-		date="20150511184645"/>
+		date="20160120234516"/>
 	<dependencies>
 		<module organisation="org.mortbay.jetty" name="jetty">
-			<revision name="6.1.26" status="release" pubdate="20101110164054" resolver="cloudera" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="0">
+			<revision name="6.1.26" status="release" pubdate="20101110164054" resolver="default" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="0">
 				<metadata-artifact status="no" details="" size="7446" time="0" location="C:\Users\Zong\.ivy2\cache\org.mortbay.jetty\jetty\ivy-6.1.26.xml" searched="false" origin-is-local="false" origin-location="https://repository.cloudera.com/content/groups/cdh-build/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.pom"/>
 				<caller organisation="org.apache.solr" name="morphlines-core" conf="test.DfsMiniCluster" rev="6.1.26" rev-constraint-default="6.1.26" rev-constraint-dynamic="6.1.26" callerrev="working@Zong-PC"/>
 				<artifacts>

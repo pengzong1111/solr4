@@ -130,7 +130,6 @@ final class ExactPhraseScorer extends Scorer {
         // this doc has all the terms -- now test whether
         // phrase occurs
         docID = doc;
-
         freq = phraseFreq();
         if (freq != 0) {
           return docID;
@@ -203,7 +202,6 @@ final class ExactPhraseScorer extends Scorer {
   }
 
   private int phraseFreq() throws IOException {
-
     freq = 0;
 
     // init chunks
@@ -316,7 +314,6 @@ final class ExactPhraseScorer extends Scorer {
       chunkStart += CHUNK;
       chunkEnd += CHUNK;
     }
-
     return freq;
   }
 

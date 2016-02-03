@@ -127,7 +127,7 @@ public abstract class TopDocsCollector<T extends ScoreDoc> extends Collector {
    * search execution collected.
    */
   public TopDocs topDocs(int start, int howMany) {
-    
+//long t0 = System.currentTimeMillis();    
     // In case pq was populated with sentinel values, there might be less
     // results than pq.size(). Therefore return all results until either
     // pq.size() or totalHits.
@@ -154,7 +154,8 @@ public abstract class TopDocsCollector<T extends ScoreDoc> extends Collector {
     
     // Get the requested results from pq.
     populateResults(results, howMany);
-    
+//long t1 = System.currentTimeMillis();
+//System.out.println("time for getting top k results: " + (t1 - t0));
     return newTopDocs(results, start);
   }
 

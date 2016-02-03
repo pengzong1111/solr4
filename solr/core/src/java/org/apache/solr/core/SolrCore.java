@@ -1925,7 +1925,7 @@ public final class SolrCore implements SolrInfoMBean {
     // setup response header
     final NamedList<Object> responseHeader = new SimpleOrderedMap<Object>();
     rsp.add("responseHeader", responseHeader);
-    rsp.add("htrc_keys", "htrc_values");
+  //  rsp.add("htrc_keys", "htrc_values");
 
     // toLog is a local ref to the same NamedList used by the response
     NamedList<Object> toLog = rsp.getToLog();

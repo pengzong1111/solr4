@@ -49,7 +49,7 @@ public class MultiTermQueryWrapperFilter<Q extends MultiTermQuery> extends Filte
   /**
    * Wrap a {@link MultiTermQuery} as a Filter.
    */
-  protected MultiTermQueryWrapperFilter(Q query) {
+  public MultiTermQueryWrapperFilter(Q query) {
       this.query = query;
   }
   
@@ -90,7 +90,6 @@ public class MultiTermQueryWrapperFilter<Q extends MultiTermQuery> extends Filte
       // reader has no fields
       return null;
     }
-
     final Terms terms = fields.terms(query.field);
     if (terms == null) {
       // field does not exist

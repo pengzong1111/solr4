@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="test.DfsMiniCluster"
 		confs="compile, test, test.DfsMiniCluster"
-		date="20150511184610"/>
+		date="20160120234408"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>

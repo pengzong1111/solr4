@@ -274,7 +274,7 @@ public abstract class MultiTermQuery extends Query {
    * This simply passes empty attributes and is equal to:
    * <code>getTermsEnum(terms, new AttributeSource())</code>
    */
-  protected final TermsEnum getTermsEnum(Terms terms) throws IOException {
+  public final TermsEnum getTermsEnum(Terms terms) throws IOException {
     return getTermsEnum(terms, new AttributeSource());
   }
 
@@ -285,6 +285,7 @@ public abstract class MultiTermQuery extends Query {
    */
   @Override
   public final Query rewrite(IndexReader reader) throws IOException {
+ //   System.out.println("rewriteMethod is: " + rewriteMethod.getClass());
     return rewriteMethod.rewrite(reader, this);
   }
 

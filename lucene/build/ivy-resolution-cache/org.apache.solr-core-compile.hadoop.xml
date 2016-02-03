@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="compile.hadoop"
 		confs="compile, compile.hadoop"
-		date="20150511184731"/>
+		date="20160120234559"/>
 	<dependencies>
 		<module organisation="com.googlecode.concurrentlinkedhashmap" name="concurrentlinkedhashmap-lru">
 			<revision name="1.2" status="release" pubdate="20110520210632" resolver="public" artresolver="main" homepage="http://code.google.com/p/concurrentlinkedhashmap" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="11">

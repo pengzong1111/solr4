@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="default"
 		confs="default"
-		date="20150511184018"/>
+		date="20160120233657"/>
 	<dependencies>
 		<module organisation="commons-codec" name="commons-codec">
 			<revision name="1.7" status="release" pubdate="20120911081418" resolver="public" artresolver="main" homepage="http://commons.apache.org/codec/" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="0">

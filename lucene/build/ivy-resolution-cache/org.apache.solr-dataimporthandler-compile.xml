@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="compile"
 		confs="compile"
-		date="20150511184506"/>
+		date="20160120234212"/>
 	<dependencies>
 		<module organisation="javax.mail" name="mail">
 			<revision name="1.4.1" status="release" pubdate="20080924133928" resolver="public" artresolver="main" homepage="https://glassfish.dev.java.net/javaee5/mail/" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="1">

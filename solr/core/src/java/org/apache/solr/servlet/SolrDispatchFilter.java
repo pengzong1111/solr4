@@ -69,6 +69,9 @@ import org.apache.solr.servlet.cache.HttpCacheHeaderUtil;
 import org.apache.solr.servlet.cache.Method;
 import org.apache.solr.update.processor.DistributingUpdateProcessorFactory;
 import org.apache.solr.util.FastWriter;
+import org.apache.solr.util.SimpleTenantPointsKeeper;
+import org.apache.solr.util.SimpleTenantPointsRefiller;
+import org.apache.solr.util.SimpleThreadCountKeeper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -113,6 +116,10 @@ public class SolrDispatchFilter implements Filter
 
   final Logger log;
 
+  //1. we think of each core as a tenant to start off. Each core has its default points. 
+  protected SimpleTenantPointsKeeper tenantPointsKeeper = new SimpleTenantPointsKeeper();
+  //protected SimpleThreadCountKeeper threadCountKeeper = new SimpleThreadCountKeeper();
+  
   protected volatile CoreContainer cores;
 
   protected String pathPrefix = null; // strip this from the beginning of a path
@@ -145,6 +152,16 @@ public class SolrDispatchFilter implements Filter
       this.pathPrefix = config.getInitParameter( "path-prefix" );
 
       this.cores = createCoreContainer();
+     
+      //2. assign points to each core
+      /*Collection<String> coreNames = cores.getAllCoreNames();
+      for(String coreName : coreNames) {
+        tenantPointsKeeper.addCoreAndPoints(coreName,  SimpleTenantPointsKeeper.POINTS);
+    //    threadCountKeeper.add(coreName, 0);
+      }*/
+      // also start a background refiller
+     // Thread backgroundRefiller = new SimpleTenantPointsRefiller(tenantPointsKeeper);
+   //   backgroundRefiller.start();
       log.info("user.dir=" + System.getProperty("user.dir"));
     }
     catch( Throwable t ) {
@@ -278,6 +295,7 @@ public class SolrDispatchFilter implements Filter
           handleAdminRequest(req, response, handler, solrReq);
           return;
         }
+        
         // Check for the core admin info url
         if( path.startsWith( "/admin/info" ) ) {
           handler = cores.getInfoHandler();
@@ -358,9 +376,18 @@ public class SolrDispatchFilter implements Filter
             core = cores.getCore("");
           }
         }
-
         // With a valid core...
         if( core != null ) {
+/*          //3. see if this core still has any points left
+     //     String coreName = core.getName();
+       //   threadCountKeeper.incrementThreadCount(corename);
+          if (tenantPointsKeeper.hasTenant(corename)) {
+              tenantPointsKeeper.decrement(corename);
+          } else {
+            System.out.println("no such core!!!!!!!!!!!!!!");
+            log.error("no such core!!!!!!!!!!!!!!");
+          }
+ */       
           final SolrConfig config = core.getSolrConfig();
           // get or create/cache the parser for the core
           SolrRequestParsers parser = config.getRequestParsers();
@@ -389,10 +416,6 @@ public class SolrDispatchFilter implements Filter
                 solrReq = parser.parse( core, path, req );
                 String qt = solrReq.getParams().get( CommonParams.QT );
                 handler = core.getRequestHandler( qt );
-log.info("zong printing=============");
-log.info("=============qt is " + qt);
-log.info("=============solr request handler is " + handler.getClass().getCanonicalName());
-log.info("zong printing=============");
                 if( handler == null ) {
                   throw new SolrException( SolrException.ErrorCode.BAD_REQUEST, "unknown handler: "+qt);
                 }
@@ -429,9 +452,7 @@ log.info("zong printing=============");
                  * Content-Type)
                  */
                 SolrRequestInfo.setRequestInfo(new SolrRequestInfo(solrReq, solrRsp));
-                log.info("zong printing=============");
-                log.info("executing===================");
-                log.info("zong printing=============");
+           //     solrRsp.add(corename, threadCountKeeper.get(corename));
                 this.execute( req, handler, solrReq, solrRsp );
                 HttpCacheHeaderUtil.checkHttpCachingVeto(solrRsp, resp, reqMethod);
               // add info to http headers
@@ -785,7 +806,7 @@ log.info("zong printing=============");
     // for example: sreq.getContext().put( "HttpServletRequest", req );
     // used for logging query stats in SolrCore.execute()
     sreq.getContext().put( "webapp", req.getContextPath() );
-    log.info("=============handler:" + handler.getClass().getCanonicalName());
+ //   log.info("=============handler:" + handler.getClass().getCanonicalName());
     sreq.getCore().execute( handler, sreq, rsp );
   }
 
