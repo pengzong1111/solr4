@@ -72,6 +72,16 @@ final class TermScorer extends Scorer {
     return docScorer.score(docsEnum.docID(), docsEnum.freq());  
   }
 
+  
+/*int nextDocNum = 0;
+int skipNum = 0;
+public int getNextDocNum() {
+  return nextDocNum;
+}
+public int getSkipNum()  {
+  return skipNum;
+}*/
+
   /**
    * Advances to the first match beyond the current whose document number is
    * greater than or equal to a given target. <br>
@@ -83,7 +93,12 @@ final class TermScorer extends Scorer {
    */
   @Override
   public int advance(int target) throws IOException {
-    return docsEnum.advance(target);
+  //  return docsEnum.advance(target);
+    int res = docsEnum.advance(target);
+ /*   nextDocNum += docsEnum.getNextDocNum();
+    skipNum += docsEnum.getSkipNum();*/
+    
+    return res;
   }
   
   @Override

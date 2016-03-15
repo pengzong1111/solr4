@@ -23,10 +23,10 @@ package org.apache.solr.util;
  */
 public class SimpleTenantPointsRefiller extends Thread {
   
-  private SimpleTenantPointsKeeper tenantPointsKeeper;
-  private int sleepTimeInMillisecond = 60000;
-  public SimpleTenantPointsRefiller(SimpleTenantPointsKeeper tenantPointsKeeper) {
-    this.tenantPointsKeeper = tenantPointsKeeper;
+ // private SimpleTenantPointsKeeper tenantPointsKeeper;
+  private int sleepTimeInMillisecond = 1000;
+  public SimpleTenantPointsRefiller() {
+ //   this.tenantPointsKeeper = tenantPointsKeeper;
   }
   
   @Override
@@ -40,7 +40,7 @@ public class SimpleTenantPointsRefiller extends Thread {
       }
       //only refill 20%
       System.out.println("try refilling...");
-      tenantPointsKeeper.refillAllBy(25);
+ //     SimpleTenantPointsKeeper.getInstance().refillAllBy(20);;
     }
     
   }

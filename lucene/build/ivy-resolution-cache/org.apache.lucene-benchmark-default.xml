@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="default"
 		confs="default"
-		date="20160120233638"/>
+		date="20160313202418"/>
 	<dependencies>
 		<module organisation="com.spatial4j" name="spatial4j">
 			<revision name="0.4.1" status="release" pubdate="20140219011135" resolver="public" artresolver="main" homepage="https://github.com/spatial4j/spatial4j" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="4">

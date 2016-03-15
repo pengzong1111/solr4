@@ -53,7 +53,7 @@ class ConjunctionScorer extends Scorer {
 
     lead = docsAndFreqs[0]; // least frequent DocsEnum leads the intersection
   }
-
+int skipListskips = 0;
   private int doNext(int doc) throws IOException {
     for(;;) {
       // doc may already be NO_MORE_DOCS here, but we don't check explicitly
@@ -67,7 +67,8 @@ class ConjunctionScorer extends Scorer {
           // on the previous iteration and the advance on the lead scorer exactly matched.
           if (docsAndFreqs[i].doc < doc) {
             docsAndFreqs[i].doc = docsAndFreqs[i].scorer.advance(doc);
-
+            skipListskips++;
+      //      docsAndFreqs[i].skips ++;
             if (docsAndFreqs[i].doc > doc) {
               // DocsEnum beyond the current doc - break and advance lead to the new highest doc.
               doc = docsAndFreqs[i].doc;
@@ -80,6 +81,8 @@ class ConjunctionScorer extends Scorer {
       }
       // advance head for next iteration
       doc = lead.doc = lead.scorer.advance(doc);
+      skipListskips++;
+   //   lead.skips++;
     }
   }
 
@@ -117,7 +120,14 @@ class ConjunctionScorer extends Scorer {
 
   @Override
   public long cost() {
-    return lead.scorer.cost();
+   System.out.println("skipListSkips::::::::: " + skipListskips);
+   /* for(DocsAndFreqs docs: docsAndFreqs) {
+     
+      System.out.println(docs.scorer + " : " + docs.scorer.cost() + " : " + docs.skips) ;
+      
+    }*/
+    return skipListskips; //zong's  change to return number of skips for skip list intersection
+ //   return lead.scorer.cost();
   }
 
   @Override
@@ -133,7 +143,7 @@ class ConjunctionScorer extends Scorer {
     final long cost;
     final Scorer scorer;
     int doc = -1;
-   
+int skips = 0;
     DocsAndFreqs(Scorer scorer) {
       this.scorer = scorer;
       this.cost = scorer.cost();

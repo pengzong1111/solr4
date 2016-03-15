@@ -31,10 +31,17 @@ public class DummySearcher {
     IndexReader indexReader = DirectoryReader.open(dir);
     IndexSearcher indexSearcher = new IndexSearcher(indexReader);
     System.out.println("how many docs in title field? : " + indexReader.getDocCount("title"));
+    System.out.println("leaves: " + indexReader.getContext().leaves().size());
+   
     
-    Query query1 = new TermQuery(new Term("title", "world"));
-    Query query2 = new TermQuery(new Term("title", "war"));
-    Query query3 = new TermQuery(new Term("title", "war"));
+    Term term1 = new Term("title", "world");
+    Term term2 = new Term("title", "war");
+    Term term3 = new Term("title", "ii");
+    Term term4 = new Term("title", "i");
+    Query query1 = new TermQuery(term1);
+    Query query2 = new TermQuery(term2);
+    Query query3 = new TermQuery(term3);
+    Query query4 = new TermQuery(term4);
     PhraseQuery phraseQuery = new PhraseQuery();
     phraseQuery.add(new Term("title", "world"));
     phraseQuery.add(new Term("title", "war"));
@@ -42,11 +49,13 @@ public class DummySearcher {
 //    System.out.println(phraseQuery.toString());
     
   //  query1.createWeight(indexSearcher).explain(context, doc)
+    System.out.println("term freqs: " + indexReader.docFreq(term1) + ", " + indexReader.docFreq(term2) + ", " + indexReader.docFreq(term3));
     
     BooleanQuery bquery = new BooleanQuery();
     bquery.add(query1, BooleanClause.Occur.MUST);
     bquery.add(query2, BooleanClause.Occur.MUST);
     bquery.add(query3, BooleanClause.Occur.MUST);
+    bquery.add(query4, BooleanClause.Occur.MUST);
     
     WildcardQuery wildCardQuery = new WildcardQuery(new Term("title", "war*"));
     
@@ -67,12 +76,12 @@ public class DummySearcher {
     System.out.println("total hits: " + result.totalHits);
     System.out.println("scoreDocs length:" + scoreDocs.length);
     
-    for(ScoreDoc scoreDoc : scoreDocs){
+/*    for(ScoreDoc scoreDoc : scoreDocs){
       Document doc = indexSearcher.doc(scoreDoc.doc);
       System.out.print(doc.get("id"));
       System.out.print(" : ");
       System.out.println(doc.get("title"));
-    }
+    }*/
     
     indexReader.close();
     dir.close();

@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="jetty"
 		confs="jetty"
-		date="20160120234601"/>
+		date="20160313203636"/>
 	<dependencies>
 		<module organisation="org.eclipse.jetty" name="jetty-deploy">
 			<revision name="8.1.10.v20130312" status="release" pubdate="20130312114802" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="1">

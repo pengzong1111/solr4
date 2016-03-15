@@ -587,6 +587,7 @@ long t000 = System.currentTimeMillis();
     TopFieldDocs topFieldDocs = (TopFieldDocs) collector.topDocs();
 long t111 = System.currentTimeMillis();
 System.out.println("==time for getting top K results: " + (t111 - t000));
+System.out.println("skips: " + collector.getSkips());
     return topFieldDocs;
   }
 
@@ -614,6 +615,7 @@ System.out.println("==time for getting top K results: " + (t111 - t000));
 //long t00 = System.currentTimeMillis();
 //long scorerCreationTime = 0;
 //long[] timeSplits = new long[2];
+    int cost = 0;
     // TODO: should we make this
     // threaded...?  the Collector could be sync'd?
     // always use single thread:
@@ -632,6 +634,8 @@ System.out.println("==time for getting top K results: " + (t111 - t000));
       if (scorer != null) {
         try {
           scorer.score(collector);
+ cost += scorer.cost();
+ //System.out.println(".....................................");
           /*{// Zong: add up times for all segments
             timeSplits[0] += scorer.timeSplits[0];
             timeSplits[1] += scorer.timeSplits[1];
@@ -643,6 +647,8 @@ System.out.println("==time for getting top K results: " + (t111 - t000));
         }
       }
     }
+//System.out.println("cost: " + cost);
+collector.setSkips(cost);
 //long t11= System.currentTimeMillis();
 /*System.out.println("~scorer creation time: " + scorerCreationTime + " milliseconds");
 System.out.println("~entire scoring(prority queue collector scoring and update top K + posting list nextDoc) takes: " + timeSplits[0] + " nanoseconds");

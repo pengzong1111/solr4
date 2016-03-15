@@ -1579,6 +1579,7 @@ public class SolrIndexSearcher extends IndexSearcher implements Closeable,SolrIn
 
       try {
         super.search(query, luceneFilter, collector);
+qr.setSkips(collector.getSkips());
         if(collector instanceof DelegatingCollector) {
           ((DelegatingCollector)collector).finish();
         }
@@ -1610,6 +1611,7 @@ public class SolrIndexSearcher extends IndexSearcher implements Closeable,SolrIn
       }
       try {
         super.search(query, luceneFilter, collector);
+qr.setSkips(collector.getSkips());
         if(collector instanceof DelegatingCollector) {
           ((DelegatingCollector)collector).finish();
         }
@@ -2404,6 +2406,14 @@ public class SolrIndexSearcher extends IndexSearcher implements Closeable,SolrIn
     private boolean partialResults;
     private DocListAndSet docListAndSet;
     private CursorMark nextCursorMark;
+//zong add cost to get skip list skips
+private int skips;
+public void setSkips(int skips) {
+  this.skips = skips;
+}
+public int getSkips() {
+  return skips;
+}
 
     public Object groupedResults;   // TODO: currently for testing
     

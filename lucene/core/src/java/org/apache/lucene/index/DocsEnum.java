@@ -28,7 +28,13 @@ import org.apache.lucene.util.Bits; // javadocs
  *  NOTE: you must first call {@link #nextDoc} before using
  *  any of the per-doc methods. */
 public abstract class DocsEnum extends DocIdSetIterator {
-  
+
+/*public int getNextDocNum() {
+  return 0;
+}
+public int getSkipNum() {
+  return 0;
+}*/
   /**
    * Flag to pass to {@link TermsEnum#docs(Bits,DocsEnum,int)} if you don't
    * require term frequencies in the returned enum. When passed to

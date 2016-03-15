@@ -117,7 +117,7 @@ public class SolrDispatchFilter implements Filter
   final Logger log;
 
   //1. we think of each core as a tenant to start off. Each core has its default points. 
-  protected SimpleTenantPointsKeeper tenantPointsKeeper = new SimpleTenantPointsKeeper();
+//  public static final SimpleTenantPointsKeeper tenantPointsKeeper = new SimpleTenantPointsKeeper();
   //protected SimpleThreadCountKeeper threadCountKeeper = new SimpleThreadCountKeeper();
   
   protected volatile CoreContainer cores;
@@ -152,16 +152,17 @@ public class SolrDispatchFilter implements Filter
       this.pathPrefix = config.getInitParameter( "path-prefix" );
 
       this.cores = createCoreContainer();
-     
+///s     
       //2. assign points to each core
-      /*Collection<String> coreNames = cores.getAllCoreNames();
+      Collection<String> coreNames = cores.getAllCoreNames();
       for(String coreName : coreNames) {
-        tenantPointsKeeper.addCoreAndPoints(coreName,  SimpleTenantPointsKeeper.POINTS);
+        SimpleTenantPointsKeeper.getInstance().addCoreAndPoints(coreName,  /*Integer.parseInt(config.getInitParameter("max-points"))*/SimpleTenantPointsKeeper.POINTS);
     //    threadCountKeeper.add(coreName, 0);
-      }*/
+      }
       // also start a background refiller
-     // Thread backgroundRefiller = new SimpleTenantPointsRefiller(tenantPointsKeeper);
+  //    Thread backgroundRefiller = new SimpleTenantPointsRefiller();
    //   backgroundRefiller.start();
+///e
       log.info("user.dir=" + System.getProperty("user.dir"));
     }
     catch( Throwable t ) {
@@ -378,16 +379,16 @@ public class SolrDispatchFilter implements Filter
         }
         // With a valid core...
         if( core != null ) {
-/*          //3. see if this core still has any points left
+  /*        //3. see if this core still has any points left
      //     String coreName = core.getName();
        //   threadCountKeeper.incrementThreadCount(corename);
           if (tenantPointsKeeper.hasTenant(corename)) {
-              tenantPointsKeeper.decrement(corename);
+              tenantPointsKeeper.decrement(corename, 1);
           } else {
             System.out.println("no such core!!!!!!!!!!!!!!");
             log.error("no such core!!!!!!!!!!!!!!");
           }
- */       
+        */
           final SolrConfig config = core.getSolrConfig();
           // get or create/cache the parser for the core
           SolrRequestParsers parser = config.getRequestParsers();

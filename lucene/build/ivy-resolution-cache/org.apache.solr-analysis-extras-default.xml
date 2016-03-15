@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="default"
 		confs="default"
-		date="20160120234537"/>
+		date="20160313203613"/>
 	<dependencies>
 		<module organisation="org.carrot2" name="morfologik-polish">
 			<revision name="1.7.1" status="release" pubdate="20130716095600" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="1">

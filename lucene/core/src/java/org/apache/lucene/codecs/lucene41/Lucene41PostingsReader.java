@@ -441,7 +441,17 @@ public final class Lucene41PostingsReader extends PostingsReaderBase {
         docBufferUpto++;
       }
     }
-
+/*//zong's edit start
+int nextDocNum = 0;
+int skipNum = 0;
+public int getNextDocNum() {
+  return nextDocNum;
+}
+public int getSkipNum() {
+  return skipNum;
+}
+// zong's edit end
+*/
     @Override
     public int advance(int target) throws IOException {
       // TODO: make frq block load lazy/skippable
@@ -478,7 +488,7 @@ public final class Lucene41PostingsReader extends PostingsReaderBase {
         // always plus one to fix the result, since skip position in Lucene41SkipReader 
         // is a little different from MultiLevelSkipListReader
         final int newDocUpto = skipper.skipTo(target) + 1; 
-
+//skipNum++;  
         if (newDocUpto > docUpto) {
           // Skipper moved
           // if (DEBUG) {
@@ -506,6 +516,7 @@ public final class Lucene41PostingsReader extends PostingsReaderBase {
       // Now scan... this is an inlined/pared down version
       // of nextDoc():
       while (true) {
+//nextDocNum++;
         // if (DEBUG) {
         //   System.out.println("  scan doc=" + accum + " docBufferUpto=" + docBufferUpto);
         // }
@@ -771,7 +782,7 @@ public final class Lucene41PostingsReader extends PostingsReaderBase {
         // }
       }
     }
-    
+   
     @Override
     public int advance(int target) throws IOException {
       // TODO: make frq block load lazy/skippable
@@ -806,7 +817,7 @@ public final class Lucene41PostingsReader extends PostingsReaderBase {
           skipper.init(docTermStartFP+skipOffset, docTermStartFP, posTermStartFP, payTermStartFP, docFreq);
           skipped = true;
         }
-
+        
         final int newDocUpto = skipper.skipTo(target) + 1; 
 
         if (newDocUpto > docUpto) {

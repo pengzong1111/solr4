@@ -103,6 +103,8 @@ import org.apache.solr.search.grouping.endresulttransformer.EndResultTransformer
 import org.apache.solr.search.grouping.endresulttransformer.GroupedEndResultTransformer;
 import org.apache.solr.search.grouping.endresulttransformer.MainEndResultTransformer;
 import org.apache.solr.search.grouping.endresulttransformer.SimpleEndResultTransformer;
+import org.apache.solr.util.QueryCostEvaluator;
+import org.apache.solr.util.SimpleTenantPointsKeeper;
 import org.apache.solr.util.SolrPluginUtils;
 
 /**
@@ -187,9 +189,9 @@ public class QueryComponent extends SearchComponent
         int postings = 0;
         int[] termPostingSizes = new int[terms.size()];
         int i = 0;
-        if(terms.size() != 0) {
+        if (terms.size() != 0) {
           NamedList<Object> termList = new SimpleOrderedMap<Object>();
-          for(Term term : terms) {
+          for (Term term : terms) {
             int count = reader.docFreq(term);
             termList.add(term.text(), count);
             postings += count;
@@ -198,6 +200,17 @@ public class QueryComponent extends SearchComponent
           }
           rsp.add("postings", postings);
           rsp.add("termList", termList);
+          
+          long cost = QueryCostEvaluator.evaluateDisjunctiveQuery(terms.size(), postings);
+          // 3. see if this core still has any points left
+          // String coreName = core.getName();
+          // threadCountKeeper.incrementThreadCount(corename);
+          String corename = req.getCore().getName();
+          if (SimpleTenantPointsKeeper.getInstance().hasTenant(corename)) {
+            SimpleTenantPointsKeeper.getInstance().decrement(corename, (int)cost);
+          } else {
+            System.out.println("no such core!!!!!!!!!!!!!!");
+          }
         }
         long timeEnd = System.currentTimeMillis();
         rsp.add("time_get_postings", (timeEnd - timeStart));
@@ -542,6 +555,7 @@ rsp.add("actual_search_time", (t1 - t0));
     ctx.query = rb.getQuery();
     rsp.add("response", ctx);
     rsp.getToLog().add("hits", rb.getResults().docList.matches());
+rsp.add("skipTimes", result.getSkips()); 
 
     if ( ! rb.req.getParams().getBool(ShardParams.IS_SHARD,false) ) {
       if (null != rb.getNextCursorMark()) {

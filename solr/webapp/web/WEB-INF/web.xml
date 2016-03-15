@@ -72,7 +72,7 @@
     -->
     <init-param>
       <param-name>max-points</param-name>
-      <param-value>2000</param-value>
+      <param-value>80000</param-value>
     </init-param>
   </filter>
 

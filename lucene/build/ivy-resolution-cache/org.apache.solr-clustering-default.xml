@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="default"
 		confs="default"
-		date="20160120234152"/>
+		date="20160313203217"/>
 	<dependencies>
 		<module organisation="org.codehaus.jackson" name="jackson-mapper-asl">
 			<revision name="1.9.13" status="release" pubdate="20130714230750" resolver="public" artresolver="main" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="7">

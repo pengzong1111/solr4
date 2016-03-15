@@ -123,6 +123,14 @@ import org.apache.lucene.index.IndexReaderContext;
  */
 public abstract class Collector {
   
+private int skips;
+public void setSkips(int skips) {
+  this.skips = skips;
+}
+public int getSkips() {
+  return skips;
+}
+  
   /**
    * Called before successive calls to {@link #collect(int)}. Implementations
    * that need the score of the current document (passed-in to

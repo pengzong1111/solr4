@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="http"
 		confs="http, jetty, start, servlet, logging"
-		date="20160120233654"/>
+		date="20160313202431"/>
 	<dependencies>
 		<module organisation="org.apache.httpcomponents" name="httpclient">
 			<revision name="4.3.1" status="release" pubdate="20131003154302" resolver="public" artresolver="main" homepage="http://hc.apache.org/httpcomponents-client" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
