@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="compile"
 		confs="compile, compile.hadoop"
-		date="20160313203634"/>
+		date="20160409170339"/>
 	<dependencies>
 		<module organisation="com.carrotsearch" name="hppc">
 			<revision name="0.5.2" status="release" pubdate="20130709035529" resolver="public" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="13">

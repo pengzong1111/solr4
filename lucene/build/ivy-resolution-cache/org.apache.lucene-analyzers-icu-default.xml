@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="default"
 		confs="default"
-		date="20160313202451"/>
+		date="20160409164712"/>
 	<dependencies>
 		<module organisation="com.ibm.icu" name="icu4j">
 			<revision name="52.1" status="release" pubdate="20131007144542" resolver="public" artresolver="main" homepage="http://icu-project.org/" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="0">

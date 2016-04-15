@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="compile"
 		confs="compile, test, test.DfsMiniCluster"
-		date="20160313203534"/>
+		date="20160409170230"/>
 	<dependencies>
 		<module organisation="org.kitesdk" name="kite-morphlines-twitter">
 			<revision name="0.11.0" status="release" pubdate="20140313113917" resolver="cloudera" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="3">

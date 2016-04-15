@@ -72,6 +72,10 @@ import org.apache.solr.util.FastWriter;
 import org.apache.solr.util.SimpleTenantPointsKeeper;
 import org.apache.solr.util.SimpleTenantPointsRefiller;
 import org.apache.solr.util.SimpleThreadCountKeeper;
+import org.apache.solr.util.SlowTenantPointsKeeper;
+import org.apache.solr.util.SlowTenantPointsKeeper2;
+import org.apache.solr.util.SlowTenantPointsKeeper3;
+import org.apache.solr.util.SlowTenantPointsKeeperWithQs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -116,10 +120,6 @@ public class SolrDispatchFilter implements Filter
 
   final Logger log;
 
-  //1. we think of each core as a tenant to start off. Each core has its default points. 
-//  public static final SimpleTenantPointsKeeper tenantPointsKeeper = new SimpleTenantPointsKeeper();
-  //protected SimpleThreadCountKeeper threadCountKeeper = new SimpleThreadCountKeeper();
-  
   protected volatile CoreContainer cores;
 
   protected String pathPrefix = null; // strip this from the beginning of a path
@@ -153,15 +153,12 @@ public class SolrDispatchFilter implements Filter
 
       this.cores = createCoreContainer();
 ///s     
-      //2. assign points to each core
+      // //1. we think of each core as a tenant to start off. Each core has its default points. 2. assign points to each core
       Collection<String> coreNames = cores.getAllCoreNames();
-      for(String coreName : coreNames) {
-        SimpleTenantPointsKeeper.getInstance().addCoreAndPoints(coreName,  /*Integer.parseInt(config.getInitParameter("max-points"))*/SimpleTenantPointsKeeper.POINTS);
-    //    threadCountKeeper.add(coreName, 0);
-      }
-      // also start a background refiller
-  //    Thread backgroundRefiller = new SimpleTenantPointsRefiller();
-   //   backgroundRefiller.start();
+      SimpleTenantPointsKeeper.getInstance().initialize(coreNames);
+     /* for(String coreName : coreNames) {
+        SimpleTenantPointsKeeper.getInstance().addCoreAndPoints(coreName,  Integer.parseInt(config.getInitParameter("max-points"))SimpleTenantPointsKeeper.POINTS);
+      }*/
 ///e
       log.info("user.dir=" + System.getProperty("user.dir"));
     }

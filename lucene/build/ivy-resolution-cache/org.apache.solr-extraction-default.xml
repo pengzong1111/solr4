@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="default"
 		confs="default"
-		date="20160313203540"/>
+		date="20160409170238"/>
 	<dependencies>
 		<module organisation="xerces" name="xercesImpl">
 			<revision name="2.9.1" status="release" pubdate="20081001181919" resolver="public" artresolver="main" homepage="http://xerces.apache.org/xerces2-j" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="32">

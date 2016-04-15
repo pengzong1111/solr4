@@ -105,6 +105,10 @@ import org.apache.solr.search.grouping.endresulttransformer.MainEndResultTransfo
 import org.apache.solr.search.grouping.endresulttransformer.SimpleEndResultTransformer;
 import org.apache.solr.util.QueryCostEvaluator;
 import org.apache.solr.util.SimpleTenantPointsKeeper;
+import org.apache.solr.util.SlowTenantPointsKeeper;
+import org.apache.solr.util.SlowTenantPointsKeeper2;
+import org.apache.solr.util.SlowTenantPointsKeeper3;
+import org.apache.solr.util.SlowTenantPointsKeeperWithQs;
 import org.apache.solr.util.SolrPluginUtils;
 
 /**

@@ -7,7 +7,7 @@
 		revision="working@Zong-PC"
 		conf="test.DfsMiniCluster"
 		confs="test, test.DfsMiniCluster"
-		date="20160313203547"/>
+		date="20160409170247"/>
 	<dependencies>
 		<module organisation="org.mortbay.jetty" name="jetty">
 			<revision name="6.1.26" status="release" pubdate="20101110164054" resolver="default" artresolver="main" homepage="" downloaded="false" searched="false" default="false" conf="system, default, optional, compile, *, provided, runtime, javadoc, sources, master" position="0">

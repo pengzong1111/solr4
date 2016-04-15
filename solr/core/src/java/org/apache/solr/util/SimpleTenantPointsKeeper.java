@@ -3,6 +3,7 @@ package org.apache.solr.util;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -159,5 +160,11 @@ public class SimpleTenantPointsKeeper {
 
       sum.addAndGet(sumToAdd);
     }
+  }
+  
+  public void initialize( Collection<String> coreNames) {
+  for(String coreName : coreNames) {
+    SimpleTenantPointsKeeper.getInstance().addCoreAndPoints(coreName,  POINTS);
+  }
   }
 }
